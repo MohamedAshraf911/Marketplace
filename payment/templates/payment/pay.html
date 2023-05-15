@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+
+<div class="w-1/2 my-6 mx-auto p-6 bg-gray-300 rounded-xl">
+    <h1 class="mb-6 text-3xl">Payment Information</h1>
+
+    <form>
+        <div class="mb-3">
+            <label class="inline-block mb-2" for="card-number">Card Number</label><br>
+            <input type="text" id="card-number" name="card-number" required placeholder="Enter card-number.."><br>
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2" for="card-holder">Card Holder Name</label><br>
+            <input type="text" id="card-holder" name="card-holder" required placeholder="Enter card-holder name.."><br>
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2" for="street-address">Street Address</label><br>
+            <input type="text" id="street-address" name="street-address" required placeholder="Enter street-address.."><br>
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2" for="country">Country</label><br>
+            <input type="text" id="country" name="country" required placeholder="Enter country name.."><br>
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2" for="expiry-date">Expiry Date</label><br>
+            <input type="text" id="expiry-date" name="expiry-date" required placeholder="Enter expiry-date.."><br>
+        </div>
+
+        <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white" type="submit">Pay Now</button>
+    </form>
+</div>
+
+{% endblock %}
