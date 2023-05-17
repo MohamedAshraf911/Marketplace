@@ -1,0 +1,46 @@
+
+{% extends 'core/base.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl" style="padding: 10px 30px;">
+    <h1 class="mb-6 text-3xl" style ="text-align: center;font-family: okay;font-weight: bold;position: relative;
+    top: 20px;">LOGIN</h1>
+
+    <form method="post" action="." >
+        {% csrf_token %}
+        
+
+        <div class="mb-3">
+            <img src="https://th.bing.com/th?id=OIP.jixXH_Els1MXBRmKFdMQPAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="image" style="    width: 38px;height: 40px;display: inline-block;position: relative;top: 45px;right: 8px;border-radius: 100%;;">
+            <div style="    width: 350px;position: relative;left: 35px;border-radius: 30px; bottom: 22px;">
+            <label class="inline-block mb-2"></label ><br>
+            {{ form.username }}
+             </div>
+        </div>
+
+        <div class="mb-3">
+            <img src="https://th.bing.com/th/id/OIP._Ia9GIh8BbIFjaJ06-TYTwHaHa?w=195&h=195&c=7&r=0&o=5&pid=1.7" alt="image" style="    width: 45px;height: 45px;display: inline-block;position: relative;top:20px;right: 15px;border-radius: 100%;">
+            <div style="    width: 350px;position: relative;left: 35px;border-radius: 30px; bottom: 50px;">
+            <label class="inline-block mb-2"></label><br>
+            {{ form.password }}
+            </div>
+        </div>
+
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white" style =" margin-right: 150px;text-align: center;position: relative;left: 118px;padding: 10px 50px; bottom: 25px;">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}
