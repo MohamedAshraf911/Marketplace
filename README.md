@@ -6,4 +6,7 @@ This is a project for the parallel and distributed system course where we make a
 2. install python virtual environment 
 `pip install virtualenv`
 3. create new virtual environment
-```python -m venv venv```
+```
+python -m venv venv
+
+```
