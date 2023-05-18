@@ -1,48 +1,96 @@
-{% extends 'core/base.html' %}
 
-{% block title %}Sign up{% endblock %}
+<!doctype html>
 
-{% block content %}
-<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl" style="padding: 40px 30px;" >
-    <h1 class="mb-6 text-3xl" style="text-align: center;font-family: okay;font-weight: bold;">Sign Up</h1>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&amp;family=Montserrat&amp;family=Sacramento&amp;display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>{% block title %}{% endblock %} | FunFactory</title>
+        <link rel="icon" href="https://th.bing.com/th/id/OIP.eyDFhj_BWS2U5aGOEzr62gHaEz?w=274&h=180&c=7&r=0&o=5&pid=1.7">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&amp;family=Montserrat&amp;family=Sacramento&amp;display=swap" rel="stylesheet">
+    </head>
 
-    <form method="post" action=".">
-        {% csrf_token %}
-        
-
-        <div class="mb-3">
-            <label class="inline-block mb-2"></label><br>
-            {{ form.username }}
-        </div>
-
-        <div class="mb-3">
-            <label class="inline-block mb-2"></label><br>
-            {{ form.email }}
-        </div>
-
-        <div class="mb-3">
-            <label class="inline-block mb-2"></label><br>
-            {{ form.password1 }}
-        </div>
-
-        <div class="mb-3">
-            <label class="inline-block mb-2"></label><br>
-            {{ form.password2 }}
-        </div>
-
-        {% if form.errors or form.non_field_errors %}
-            <div class="mb-3 p-6 bg-red-100 rounded-xl">
-                {% for field in form %}
-                    {{ field.errors }}
-                {% endfor %}
-
-                {{ form.non_field_errors }}
+    <body style="background-color: #148b9566;">
+        <img src="https://th.bing.com/th/id/OIP.gCznLg9MK2sPL8_JOu233QHaHa?w=178&h=180&c=7&r=0&o=5&pid=1.7" alt="image" style=" width: 40px; height: 40px; border-radius: 120%;border-radius: 100%;
+        position: absolute; top: 19px; margin-left: 30px;">
+        <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200" >
+            <a href="#" class="text-xl font-semibold"  style="font-family: 'Merriweather', serif; font-size: 25px; font-weight: bold; color:#000000b0; margin-left: 50px;">FunFactory</a>
+            <div class="space-x-6" >                
+                <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign up</a>
+                <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Log in</a>
             </div>
-        {% endif %}
+        </nav>
+        <div class="px-6 py-6" style="background-color: #148b9566;">
+            {% block content %}
+            <div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl" style="padding: 40px 30px;" >
+                <h1 class="mb-6 text-3xl" style="text-align: center;font-family: okay;font-weight: bold;">Sign Up</h1>
 
-        <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white" style="position: relative;left: 90px;top: 3px;width: 200px;">Submit</button>
-    </form>
-</div>
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    
+
+                    <div class="mb-3">
+                        <label class="inline-block mb-2"></label><br>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="inline-block mb-2"></label><br>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="inline-block mb-2"></label><br>
+                        {{ form.password1 }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="inline-block mb-2"></label><br>
+                        {{ form.password2 }}
+                    </div>
+
+                    {% if form.errors or form.non_field_errors %}
+                        <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                            {% for field in form %}
+                                {{ field.errors }}
+                            {% endfor %}
+
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white" style="position: relative;left: 90px;top: 3px;width: 200px;">Submit</button>
+                </form>
+            </div>
 
 
-{% endblock %}
+            {% endblock %}          
+        </div>
+
+        <footer class="py-6 px-6 flex justify-between bg-gray-800">
+            <div class="w-2/3 pr-10">
+                <h3 class="mb-5 font-semibold text-gray-400">About</h3>
+
+                <p class="text-lg text-gray-500" style="width:inherit;">Discover a world of convenience and endless possibilities, where quality meets affordability, at our marketplace.</p>
+            </div>
+
+            <div class="w-1/3">
+                <h3 class="mb-5 font-semibold text-gray-400">Menu</h3>
+
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">About</a></li>
+                    <li><a href="{% url 'core:contact' %}" class="text-lg text-teal-500 hover:text-teal-700">Contact</a></li>
+                    <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">Privacy</a></li>
+                    <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">Terms of use</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
+
+
+
+
+

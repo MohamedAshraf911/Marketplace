@@ -84,10 +84,36 @@ WSGI_APPLICATION = 'DSProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'MarketDB1',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'DESKTOP-K7JBVCG\SQLEXPRESS',
+        'PORT': '',
+        'Encrypt':'no',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        }
+    },
+    'database2': {
+        'ENGINE': 'mssql',
+        'NAME': 'MarketDB2',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'DESKTOP-K7JBVCG',
+        'PORT': '',
+        'Encrypt':'no',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        }
     }
 }
+
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 
 
 # Password validation
