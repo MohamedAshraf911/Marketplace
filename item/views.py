@@ -4,7 +4,8 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import EditItemForm, NewItemForm
-from .models import Category, Item
+from item.models import Category, Item
+
 # /////////////////////////////////////////////////
 from django.http import JsonResponse
 from .models import Item
@@ -48,6 +49,7 @@ def item_detail(request,id,format = None):
         item.delete()
         return Response(status=status.HTTP_204_NO_CONTENT) 
 # /////////////////////////////////////////////////
+
 def items(request):
     query = request.GET.get('query','')
     category_id = request.GET.get('category',0)
@@ -85,7 +87,13 @@ def new(request):
         if form.is_valid():
             item = form.save(commit=False)
             item.created_by = request.user
+            # obj = Item(category=item.category,name=item.name,description=item.description,price=item.price,image=item.image,is_Sold=item.is_Sold,created_by= 1,created_at=item.created_at)
+            # obj.save(using='database2')
+            # if(item.price > 100):
+            #     item.save(using='database2')
+            # else:
             item.save()
+                
 
             return redirect('item:detail', pk=item.id)
     else:
