@@ -8,5 +8,4 @@ This is a project for the parallel and distributed system course where we make a
 3. create new virtual environment
 ```
 python -m venv venv
-
 ```
