@@ -4,6 +4,9 @@ This is a project for the parallel and distributed system course where we make a
 ## Login
 ![FunFactory](./images/Picture1.png "FunFactory") *FunFactory*
 
+##Products
+![FunFactory](./images/Picture2.png "FunFactory") *FunFactory*
+
 ## Installation on Windows
 1. Clone this project
 2. install python virtual environment 
