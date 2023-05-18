@@ -33,23 +33,17 @@ pip install pillow
 ```
 pip install djangorestframework
 ```
-8. make migrations 
+8. Download SQL Server Management 
+9. Create Two Database with names MarketDB1 , MarketDB2 on two different servers  
+10. make migrations 
 ```
 python manage.py makemigrations
 ```
-9. apply migrations
+11. apply migrations
 ```
 python manage.py migrate
 ```
-10. run server
+12. run server
 ```
 python manage.py runserver
 ```
-## Admin Set-Up
-1. Create Super user:
-```
-python manage.py createsuperuser
-```
-2. Enter username,mail , password 
-3. run server
-4. go to 127.0.0.1:8000/admin 
