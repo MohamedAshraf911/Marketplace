@@ -2,7 +2,7 @@
 This is a project for the parallel and distributed system course where we make an online market place in which users can add, edit and delete items for other users to buy 
 
 ## Login
-![FunFactory](./images/picture1.jpg "FunFactory") *FunFactory*
+![FunFactory](./images/Picture1.png "FunFactory") *FunFactory*
 
 ## Installation on Windows
 1. Clone this project
